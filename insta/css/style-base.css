@@ -1,0 +1,73 @@
+.navbar a{
+    color: black;
+}
+
+.navbar a:active{
+    opacity:0.5;
+}
+
+/*Sticky 속성은 최초에 relative 속성처럼 동작하다가 스크롤이 특정 지점에 도달하면 요소를 고정(fixed) 시킬 수 있습니다.*/
+/*z-index: 숫자로 사용되는 데 번호가 높게 부여된 레이어부터 보여지게 된다는 것 */
+
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	width: 100%;
+	max-width: var(--max-size);
+	margin: 0 auto;
+}
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid var(--color-border);
+    background-color: white;
+}
+
+
+.nav-brand img{
+    position:relative;
+    top:0.5rem;
+    left:0.5rem;
+    width:100px;
+    margin-right:3rem;
+}
+
+.nav-item {
+    display :flex;
+}
+
+.nav-item li{
+    font-size:2.5rem;
+    list-style:none;
+    margin-left:1.5rem;
+}
+
+
+.nav-search input{
+    border:0.5px solid var(--color-border);
+    outline:none;
+    padding:0.5rem;
+    background-color:var(--color-gray);
+    width:200px;
+    text-align:center;
+}
+
+.nav-search input::placeholder{
+    font-size:var(--font-small);
+    font-weight:300;
+    color:gray;
+}
+
+.nav-search input:focus{
+    text-align:left;
+}
+
+/*미디어 쿼리 : 반응형 웹*/
+@media(max-width:600px){
+    .nav-search{
+        display:none;
+    }
+}
